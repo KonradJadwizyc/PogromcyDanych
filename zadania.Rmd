@@ -83,7 +83,7 @@ auta8 <- auta2012 %>% select(c(Marka,Cena.w.PLN)) %>%
 # zadanie 9
 ```{r}
 library(ca)
-##### to te¿ nie dzia³¹ 
+##### to te? nie dzia?? 
 Tab <- levels(auta2012$Rodzaj.paliwa)[auta2012$Rodzaj.paliwa]
 auta9 <- auta2012 %>% filter(Marka == "Volkswagen") %>%
   table(Tab)
@@ -91,7 +91,7 @@ auta9 <- auta2012 %>% filter(Marka == "Volkswagen") %>%
 
 # zadania 10
 ```{r}
-###### to trzeba dokoñczyæ 
+###### to trzeba doko?czy? 
 procKlima <- function(Marka = "") {
   if(Marka == "") {
   zad_6 <- auta2012 %>% mutate(klimatyzacja = grepl(pattern = "klimatyzacja", Wyposazenie.dodatkowe)) %>% 
@@ -190,7 +190,7 @@ zadanie_18$Marka <- as.character(zadanie_18$Marka)
 max(zadanie_18$srednia)
 
 zadanie_18 <- zadanie_18 %>% filter(srednia >110000)
-## problem z funkcja count nie liczy XD
+## problem z funkcja count nie liczy 
   
 
 ```
@@ -198,9 +198,9 @@ zadanie_18 <- zadanie_18 %>% filter(srednia >110000)
 # zadanie 19
 ```{r}
 ####
-# tabela dla wartoœci paliwa diesel
+# tabela dla warto?ci paliwa diesel
 # tabela kontyngencji 
-# hmm tu trzeba pliczyæ procenty z danym paliwem
+# hmm tu trzeba pliczy? procenty z danym paliwem
 Zad_19 <- auta2012 %>% mutate(Paliwo = grepl(pattern = "benzyna", Rodzaj.paliwa)) %>% 
   select(c(Marka,Model,Paliwo)) %>% 
   group_by(Marka) %>%
@@ -213,34 +213,10 @@ Zad_19 <- auta2012 %>% mutate(Paliwo = grepl(pattern = "benzyna", Rodzaj.paliwa)
 ```{r}
 #####
 
-
-swieta <- function() {
-print("      @")
-print("     ##")
-print("    ####")
-print("   ######")
-print("  ########")
-print(" ##########")
-print("############")
-print("     {}")
-}
-
-swieta()
 ```
 
 ```{r}
-cho <- function(choi = X) {
-  for(j in 1:1) {
-    print(" &")
-  }
-  i==1
-for(i in 1:5) {
-  print("XXX", i)
-}
-   for(n in 1:1) {
-    print("[]")
-  }
-}
+
 ```
  
  
