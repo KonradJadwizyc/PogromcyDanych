@@ -14,13 +14,14 @@ library(dplyr)
 ```
 
 
-# zadanie 1
+# zadanie 1 -- OK
 ```{r}
 zad_1 <- sqrt((2+517)*1.23)
 
 ```
 
-# zadanie 2
+# zadanie 2 -- dlaczego tak? 
+
 ```{r}
 wynik <- koty_ptaki %>% select(predkosc)
 
@@ -31,24 +32,35 @@ data.frame(wynik2)
 cbind(wynik,wynik2)
 ```
 
-# zadanie 3
+Sugerowane rozwiazanie czy to było bez dplyr? 
+
+```{r}
+koty_ptaki <- koty_ptaki %>% mutate(wynik = ifelse(predkosc > 99, "szybki", "wolny")
+```
+
+# zadanie 3 -- ok
 ```{r}
 zad_3 <- koty_ptaki %>% filter(dlugosc > 1)
 ```
 
-# zadanie 4
+# zadanie 4 -- ok
 ```{r}
 zad_4 <- koty_ptaki %>% arrange(predkosc)
 
 ```
 
-# zadanie 5 
+# zadanie 5  -- ok ale...
 ```{r}
 auta <- auta2012
 zad_5 <- c(as.character(auta$Marka))
 ```
+można tak, nie trzeba używać `c()` bo `as.character` zwraca wektor bo `auta2012$Marka` to wektor (czy `as.character()` jest potrzebne?)
 
-# zadanie 6 
+```{r}
+zad_5 <- as.character(auta2012$Marka)
+```
+
+# zadanie 6 -- w wyniku maiałbyć tabela (macierz) więc...
 ```{r}
 #####
 
@@ -60,8 +72,14 @@ percent <- data.frame(percent_rank(zad_6$n))
 colnames(percent) <- ("Procent")
 
 ```
+sugerowane rozwiązanie
 
-# zadanie 7
+```{r}
+auta2012 <- auta2012 %>% mutate(klimatyzacja = grepl(pattern = "klimatyzacja", Wyposazenie.dodatkowe))
+wynik <- xtabs(~klimatyzacja, data = auta2012)
+```
+
+# zadanie 7 -- ok
 ```{r}
 auta7 <- auta2012 %>% filter(Marka == "Volkswagen") %>% 
   group_by(Model) %>% mutate(wynikCena = mean(Cena.w.PLN)) %>% 
@@ -69,7 +87,8 @@ auta7 <- auta2012 %>% filter(Marka == "Volkswagen") %>%
 
 ```
 
-# zadnie 8
+# zadnie 8 -- niepoprawne rozwiązanie -- summarise zamiast mutate i count (????)
+
 ```{r}
 
 auta8 <- auta2012 %>% select(c(Marka,Cena.w.PLN)) %>% 
@@ -77,10 +96,19 @@ auta8 <- auta2012 %>% select(c(Marka,Cena.w.PLN)) %>%
   group_by(Marka) %>% 
   mutate(srednia = mean(Cena.w.PLN)) %>% 
   count(srednia) %>% select(c(Marka,srednia))
-
 ```
 
-# zadanie 9
+Sugerowane rozwiazanie
+
+```{r}
+auta2012 %>% select(c(Marka,Cena.w.PLN)) %>% 
+  filter(Marka != "") %>%
+  group_by(Marka) %>%
+  summarise(srednia = mean(Cena.w.PLN, na.rm = T))
+```
+
+# zadanie 9 -- niepoprawne rozwiązanie
+
 ```{r}
 library(ca)
 ##### to te? nie dzia?? 
@@ -89,13 +117,23 @@ auta9 <- auta2012 %>% filter(Marka == "Volkswagen") %>%
   table(Tab)
 ```
 
-# zadania 10
+Sugerowane
+
+```{r}
+m <- auta2012 %>% filter(Marka == "Volkswagen")
+wynik <- table(m$Rodzaj.paliwa)
+wynik
+```
+
+
+# zadania 10  -- trochę zawile
+
 ```{r}
 ###### to trzeba doko?czy? 
 procKlima <- function(Marka = "") {
   if(Marka == "") {
   zad_6 <- auta2012 %>% mutate(klimatyzacja = grepl(pattern = "klimatyzacja", Wyposazenie.dodatkowe)) %>% 
-  group_by(Marka) %>% count(klimatyzacja) %>% filter(Marka != "") %>% filter(Marka == "Toyota")
+  group_by(Marka) %>% count(klimatyzacja) %>% filter(Marka != "") %>% filter(Marka == "Toyota") ## tutaj zawsze bedzie zwrócona Toyota!!!
   } else {
     zad_6 <- auta2012 %>% mutate(klimatyzacja = grepl(pattern = "klimatyzacja", Wyposazenie.dodatkowe)) %>% 
   group_by(Marka) %>% count(klimatyzacja) %>% filter(Marka != "")
@@ -108,16 +146,24 @@ return(zad_6)
 procKlima(Marka = "Toyota")
 ```
 
-# zad 11 
+Sugerowałbym:
+
+- dodać do zbioru kolumnę klumatyzacna
+- najpierw wyznaczyć zrobić filtr po marce
+- poźniej wyliczyć to trzeba
+
+# zad 11  -- OK
 ```{r}
-auta11 <- auta2012 %>% filter(Marka == "Toyota", Model == "Corolla")
+auta11 <- auta2012 %>% filter(Marka == "Toyota", Model == "Corolla") ## można filter(Marka %in% c("Toyota", "Corolla")) 
 
  data <- quantile(auta11$Cena.w.PLN, na.rm = TRUE, names = TRUE)
  data[2:4]
 
 ```
 
-#zadanie 12
+
+#zadanie 12 --  niepoprawne rozwiązanie, proszę spojrzeć na zadanie 8.
+
 ```{r}
 auta12 <- auta2012 %>% filter(Marka == "Toyota") %>% 
   group_by(Model) %>% 
@@ -126,13 +172,25 @@ auta12 <- auta2012 %>% filter(Marka == "Toyota") %>%
 auta12
 ```
 
-# zadanie 13 
+Sugerowane rozwiąznie
+
+```{r}
+auta12 <- auta2012 %>% filter(Marka == "Toyota") %>% 
+  group_by(Model) %>% 
+  summarise(srednia = mean(Cena.w.PLN, na.rm = TRUE)) %>% 
+  arrange(-srednia)
+auta12
+```
+
+# zadanie 13  -- ok
+
 ```{r}
 daneWiek <- read.csv(file = "http://biecek.pl/R/dane/daneO.csv", sep = ";", dec = ",", header = TRUE)
 wiek <- daneWiek %>%  mutate(srWiek = mean(Wiek))
 ```
 
-# zadanie 14
+# zadanie 14 -- znów to samo - dlaczego nie summarise? 
+
 ```{r}
 zad_14 <- koty_ptaki %>% group_by(druzyna) %>% 
   mutate(maxPredkosc = max(predkosc)) %>% 
@@ -140,7 +198,8 @@ zad_14 <- koty_ptaki %>% group_by(druzyna) %>%
   select(c(druzyna,maxPredkosc))
 ```
 
-# zadanie 15
+# zadanie 15 -- ok
+
 ```{r}
 auta14 <- auta2012 %>% filter(Marka == "Volkswagen", Model == "Passat", Rok.produkcji == "2006") %>% 
   mutate(srCena = mean(Cena.w.PLN, na.rm = TRUE)) %>% 
@@ -149,7 +208,8 @@ auta14 <- auta2012 %>% filter(Marka == "Volkswagen", Model == "Passat", Rok.prod
 
 ```
 
-# zadanie 16
+# zadanie 16 -- strasznie zakombinowane
+
 ```{r}
 zad_16 <- auta2012 %>% filter(Marka != "",
                               Rok.produkcji == "2007") %>% 
@@ -158,8 +218,18 @@ zad_16 <- auta2012 %>% filter(Marka != "",
 colnames(zad_16) <- c("Marka","Count") 
 desc(zad_16$Count)
 ```
+Sugerowane rozwiązanie (wystarczy count -- to samo co group_by, summarise i arrange)
 
-# zadanie 17
+```{r}
+auta2012 %>% filter(Marka != "", Rok.produkcji == "2007") %>% 
+  count(Marka, sort = TRUE) %>%
+  rename(count = n) 
+```
+
+
+# zadanie 17 -- znów to samo czyli mutate + count -- sugeruję to zmienić
+
+
 ```{r}
 policzSredniaCene <- function(Marka = "Toyota",
                               Rok.produkcji = "2007") {
@@ -176,7 +246,7 @@ policzSredniaCene <- function(Marka = "Toyota",
 policzSredniaCene("Toyota","2007")
 ```
 
-# zadanie 18
+# zadanie 18 -- j.w. 
 ```{r}
 zadanie_18 <- auta2012 %>% filter(Rok.produkcji == "2006",
                                   Rodzaj.paliwa == "olej napedowy (diesel)",
@@ -195,7 +265,10 @@ zadanie_18 <- zadanie_18 %>% filter(srednia >110000)
 
 ```
 
-# zadanie 19
+# zadanie 19 -- zadanie 19 dotyczy zbioru diagnoza a tutaj jest o benzynie?
+
+
+
 ```{r}
 ####
 # tabela dla warto?ci paliwa diesel
@@ -207,6 +280,13 @@ Zad_19 <- auta2012 %>% mutate(Paliwo = grepl(pattern = "benzyna", Rodzaj.paliwa)
   filter(Marka != "") %>%
   count(Paliwo)
 
+```
+Treść ze strony
+
+```
+W pakiecie PogromcyDanych dostępny jest zbiór danych diagnoza.
+W tym zbiorze danych w kolumnie plec znajduje się informacja o płci respondenta a w kolumnie eduk4_2013 edukacja opisana w jednej z czterech wartości.
+Wyznacz tablicę kontyngencji, tak by w kolumnach przedstawione były płcie a w wierszach grupy edukacji. Usuń z tej tabeli wiersze w których występują same wartości 0. Pozostałą tabelę kontyngencji przypisz do zmiennej wynik.
 ```
 
 # zadanie 20
