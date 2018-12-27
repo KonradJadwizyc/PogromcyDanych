@@ -153,36 +153,20 @@ policzSredniaCene <- function(Marka = "Toyota",
 policzSredniaCene("Toyota","2007")
 ```
 
-# zadanie 18
+# zadanie 18 ok - dodanie max prędkości
 ```{r}
-zadanie_18 <- auta2012 %>% filter(Rok.produkcji == "2006",
+zad_18 <- auta2012 %>% filter(Rok.produkcji == "2006",
                                   Rodzaj.paliwa == "olej napedowy (diesel)",
                                   Marka != "") %>% 
-  group_by(Marka) %>%
-  mutate(srednia = mean(Cena.w.PLN)) %>% 
-  select(Marka, srednia) %>% 
-  count(srednia) %>% select(Marka, srednia)
-zadanie_18$Marka <- as.character(zadanie_18$Marka)
-
-max(zadanie_18$srednia)
-
-zadanie_18 <- zadanie_18 %>% filter(srednia >110000)
-## problem z funkcja count nie liczy 
-  
+                                  group_by(Marka) %>%
+                                  summarise(srednia = mean(Cena.w.PLN, na.rm = TRUE))
+                                  
 
 ```
 
 # zadanie 19
 ```{r}
-####
-# tabela dla warto?ci paliwa diesel
-# tabela kontyngencji 
-# hmm tu trzeba pliczy? procenty z danym paliwem
-Zad_19 <- auta2012 %>% mutate(Paliwo = grepl(pattern = "benzyna", Rodzaj.paliwa)) %>% 
-  select(c(Marka,Model,Paliwo)) %>% 
-  group_by(Marka) %>%
-  filter(Marka != "") %>%
-  count(Paliwo)
+
 
 ```
 
