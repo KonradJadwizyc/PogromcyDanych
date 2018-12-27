@@ -14,133 +14,113 @@ library(dplyr)
 ```
 
 
-# zadanie 1
+# zadanie 1 ok
 ```{r}
 zad_1 <- sqrt((2+517)*1.23)
 
 ```
 
-# zadanie 2
+# zadanie 2 ok
 ```{r}
-wynik <- koty_ptaki %>% select(predkosc)
-
-zad_2 <- ifelse(wynik[,"predkosc"] > 99,
+Zad_2 <- koty_ptaki %>% mutate(wynik = ifelse(koty_ptaki$predkosc > 99,
                  "szybki",
-                 "wolny")
-data.frame(wynik2)
-cbind(wynik,wynik2)
+                 "wolny"))
 ```
 
-# zadanie 3
+# zadanie 3 ok
 ```{r}
 zad_3 <- koty_ptaki %>% filter(dlugosc > 1)
 ```
 
-# zadanie 4
+# zadanie 4 ok
 ```{r}
 zad_4 <- koty_ptaki %>% arrange(predkosc)
 
 ```
 
-# zadanie 5 
+# zadanie 5 ok
 ```{r}
 auta <- auta2012
 zad_5 <- c(as.character(auta$Marka))
 ```
 
-# zadanie 6 
+# zadanie 6 ok
 ```{r}
-#####
-
 zad_6 <- auta2012 %>% mutate(klimatyzacja = grepl(pattern = "klimatyzacja", Wyposazenie.dodatkowe)) %>% 
-  group_by(Marka) %>% count(klimatyzacja) %>% filter(Marka != "")
-
-percent <- data.frame(percent_rank(zad_6$n))
-
-colnames(percent) <- ("Procent")
-
+wynik <- xtabs(~klimatyzacja, data = auta2012)
 ```
 
-# zadanie 7
+# zadanie 7 ok
 ```{r}
-auta7 <- auta2012 %>% filter(Marka == "Volkswagen") %>% 
+Zad_7 <- auta2012 %>% filter(Marka == "Volkswagen") %>% 
   group_by(Model) %>% mutate(wynikCena = mean(Cena.w.PLN)) %>% 
   mutate(wynikPrzebieg = mean(Przebieg.w.km, na.rm = TRUE))
 
 ```
 
-# zadnie 8
+# zadnie 8 ok
 ```{r}
 
-auta8 <- auta2012 %>% select(c(Marka,Cena.w.PLN)) %>% 
+Zad_8 <- auta2012 %>% select(c(Marka,Cena.w.PLN)) %>% 
   filter(Marka != "") %>%
   group_by(Marka) %>% 
-  mutate(srednia = mean(Cena.w.PLN)) %>% 
-  count(srednia) %>% select(c(Marka,srednia))
+  summarise(srednia = mean(Cena.w.PLN, na.rm = TRUE)) %>% arrange(srednia)
 
 ```
 
-# zadanie 9
+# zadanie 9 ok
 ```{r}
-library(ca)
-##### to te? nie dzia?? 
-Tab <- levels(auta2012$Rodzaj.paliwa)[auta2012$Rodzaj.paliwa]
-auta9 <- auta2012 %>% filter(Marka == "Volkswagen") %>%
-  table(Tab)
+auta9 <- auta2012 %>% filter(Marka == "Volkswagen")
+zad_9 <- table(auta9$Rodzaj.paliwa)
+zad_9
 ```
 
 # zadania 10
 ```{r}
-###### to trzeba doko?czy? 
+# dla przekładu dla marki Toyota
 procKlima <- function(Marka = "") {
   if(Marka == "") {
-  zad_6 <- auta2012 %>% mutate(klimatyzacja = grepl(pattern = "klimatyzacja", Wyposazenie.dodatkowe)) %>% 
-  group_by(Marka) %>% count(klimatyzacja) %>% filter(Marka != "") %>% filter(Marka == "Toyota")
-  } else {
-    zad_6 <- auta2012 %>% mutate(klimatyzacja = grepl(pattern = "klimatyzacja", Wyposazenie.dodatkowe)) %>% 
-  group_by(Marka) %>% count(klimatyzacja) %>% filter(Marka != "")
-  }
+  zad_10 <- auta2012 %>% mutate(klimatyzacja = grepl(pattern = "klimatyzacja", Wyposazenie.dodatkowe)) %>% 
+  filter(Marka != "") %>% filter(Marka == "Toyota")
+  } 
   
-percent <- data.frame(percent_rank(zad_6$n))
+percent <- data.frame(percent_rank(zad_10$klimatyzacja))
   
-return(zad_6)
+return(zad_10)
 }
 procKlima(Marka = "Toyota")
 ```
 
-# zad 11 
+# zad 11 ok
 ```{r}
-auta11 <- auta2012 %>% filter(Marka == "Toyota", Model == "Corolla")
+Zad_11 <- auta2012 %>% filter(Marka == "Toyota", Model == "Corolla")
 
  data <- quantile(auta11$Cena.w.PLN, na.rm = TRUE, names = TRUE)
  data[2:4]
 
 ```
 
-#zadanie 12
+#zadanie 12 ok
 ```{r}
-auta12 <- auta2012 %>% filter(Marka == "Toyota") %>% 
+Zad_12 <- auta2012 %>% filter(Marka == "Toyota") %>% 
   group_by(Model) %>% 
-  mutate(srednia = mean(Cena.w.PLN, na.rm = TRUE)) %>% 
-  count(srednia) %>% select(c(Model,srednia))
-auta12
+  summarise(srednia = mean(Cena.w.PLN, na.rm = TRUE)) %>% arrange(-srednia)
+Zad_12
 ```
 
-# zadanie 13 
+# zadanie 13 ok
 ```{r}
 daneWiek <- read.csv(file = "http://biecek.pl/R/dane/daneO.csv", sep = ";", dec = ",", header = TRUE)
 wiek <- daneWiek %>%  mutate(srWiek = mean(Wiek))
 ```
 
-# zadanie 14
+# zadanie 14 ok
 ```{r}
 zad_14 <- koty_ptaki %>% group_by(druzyna) %>% 
-  mutate(maxPredkosc = max(predkosc)) %>% 
-  count(maxPredkosc) %>% 
-  select(c(druzyna,maxPredkosc))
+ summarise(srednia =max(predkosc, na.rm = TRUE)) 
 ```
 
-# zadanie 15
+# zadanie 15 ok
 ```{r}
 auta14 <- auta2012 %>% filter(Marka == "Volkswagen", Model == "Passat", Rok.produkcji == "2006") %>% 
   mutate(srCena = mean(Cena.w.PLN, na.rm = TRUE)) %>% 
@@ -149,17 +129,15 @@ auta14 <- auta2012 %>% filter(Marka == "Volkswagen", Model == "Passat", Rok.prod
 
 ```
 
-# zadanie 16
+# zadanie 16 ok
 ```{r}
 zad_16 <- auta2012 %>% filter(Marka != "",
                               Rok.produkcji == "2007") %>% 
-  group_by(Marka) %>%
-  count(Marka)
-colnames(zad_16) <- c("Marka","Count") 
-desc(zad_16$Count)
+                              count(Marka, sort = TRUE) %>%
+                              rename(count = n) 
 ```
 
-# zadanie 17
+# zadanie 17 ok
 ```{r}
 policzSredniaCene <- function(Marka = "Toyota",
                               Rok.produkcji = "2007") {
@@ -167,8 +145,7 @@ policzSredniaCene <- function(Marka = "Toyota",
     auta <- auta2012 %>% filter(Marka == "Toyota",
                                 Rok.produkcji == "2007") %>% 
       group_by(Marka) %>%
-      mutate(srednia = mean(Cena.w.PLN)) %>% 
-      count(srednia)
+     summarise(srednia = mean(Cena.w.PLN, na.rm = TRUE))
   } 
  return(auta$srednia)
 }
@@ -215,8 +192,5 @@ Zad_19 <- auta2012 %>% mutate(Paliwo = grepl(pattern = "benzyna", Rodzaj.paliwa)
 
 ```
 
-```{r}
-
-```
  
  
