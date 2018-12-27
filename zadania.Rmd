@@ -1,0 +1,246 @@
+---
+title: "Pogromcy danych"
+output: html_notebook
+---
+# instalacja pakietu pogromcy danych
+```{r}
+install.packages("PogromcyDanych")
+```
+
+# biblioteki 
+```{r}
+library(PogromcyDanych)
+library(dplyr)
+```
+
+
+# zadanie 1
+```{r}
+zad_1 <- sqrt((2+517)*1.23)
+
+```
+
+# zadanie 2
+```{r}
+wynik <- koty_ptaki %>% select(predkosc)
+
+zad_2 <- ifelse(wynik[,"predkosc"] > 99,
+                 "szybki",
+                 "wolny")
+data.frame(wynik2)
+cbind(wynik,wynik2)
+```
+
+# zadanie 3
+```{r}
+zad_3 <- koty_ptaki %>% filter(dlugosc > 1)
+```
+
+# zadanie 4
+```{r}
+zad_4 <- koty_ptaki %>% arrange(predkosc)
+
+```
+
+# zadanie 5 
+```{r}
+auta <- auta2012
+zad_5 <- c(as.character(auta$Marka))
+```
+
+# zadanie 6 
+```{r}
+#####
+
+zad_6 <- auta2012 %>% mutate(klimatyzacja = grepl(pattern = "klimatyzacja", Wyposazenie.dodatkowe)) %>% 
+  group_by(Marka) %>% count(klimatyzacja) %>% filter(Marka != "")
+
+percent <- data.frame(percent_rank(zad_6$n))
+
+colnames(percent) <- ("Procent")
+
+```
+
+# zadanie 7
+```{r}
+auta7 <- auta2012 %>% filter(Marka == "Volkswagen") %>% 
+  group_by(Model) %>% mutate(wynikCena = mean(Cena.w.PLN)) %>% 
+  mutate(wynikPrzebieg = mean(Przebieg.w.km, na.rm = TRUE))
+
+```
+
+# zadnie 8
+```{r}
+
+auta8 <- auta2012 %>% select(c(Marka,Cena.w.PLN)) %>% 
+  filter(Marka != "") %>%
+  group_by(Marka) %>% 
+  mutate(srednia = mean(Cena.w.PLN)) %>% 
+  count(srednia) %>% select(c(Marka,srednia))
+
+```
+
+# zadanie 9
+```{r}
+library(ca)
+##### to te¿ nie dzia³¹ 
+Tab <- levels(auta2012$Rodzaj.paliwa)[auta2012$Rodzaj.paliwa]
+auta9 <- auta2012 %>% filter(Marka == "Volkswagen") %>%
+  table(Tab)
+```
+
+# zadania 10
+```{r}
+###### to trzeba dokoñczyæ 
+procKlima <- function(Marka = "") {
+  if(Marka == "") {
+  zad_6 <- auta2012 %>% mutate(klimatyzacja = grepl(pattern = "klimatyzacja", Wyposazenie.dodatkowe)) %>% 
+  group_by(Marka) %>% count(klimatyzacja) %>% filter(Marka != "") %>% filter(Marka == "Toyota")
+  } else {
+    zad_6 <- auta2012 %>% mutate(klimatyzacja = grepl(pattern = "klimatyzacja", Wyposazenie.dodatkowe)) %>% 
+  group_by(Marka) %>% count(klimatyzacja) %>% filter(Marka != "")
+  }
+  
+percent <- data.frame(percent_rank(zad_6$n))
+  
+return(zad_6)
+}
+procKlima(Marka = "Toyota")
+```
+
+# zad 11 
+```{r}
+auta11 <- auta2012 %>% filter(Marka == "Toyota", Model == "Corolla")
+
+ data <- quantile(auta11$Cena.w.PLN, na.rm = TRUE, names = TRUE)
+ data[2:4]
+
+```
+
+#zadanie 12
+```{r}
+auta12 <- auta2012 %>% filter(Marka == "Toyota") %>% 
+  group_by(Model) %>% 
+  mutate(srednia = mean(Cena.w.PLN, na.rm = TRUE)) %>% 
+  count(srednia) %>% select(c(Model,srednia))
+auta12
+```
+
+# zadanie 13 
+```{r}
+daneWiek <- read.csv(file = "http://biecek.pl/R/dane/daneO.csv", sep = ";", dec = ",", header = TRUE)
+wiek <- daneWiek %>%  mutate(srWiek = mean(Wiek))
+```
+
+# zadanie 14
+```{r}
+zad_14 <- koty_ptaki %>% group_by(druzyna) %>% 
+  mutate(maxPredkosc = max(predkosc)) %>% 
+  count(maxPredkosc) %>% 
+  select(c(druzyna,maxPredkosc))
+```
+
+# zadanie 15
+```{r}
+auta14 <- auta2012 %>% filter(Marka == "Volkswagen", Model == "Passat", Rok.produkcji == "2006") %>% 
+  mutate(srCena = mean(Cena.w.PLN, na.rm = TRUE)) %>% 
+  mutate(frakcja = percent_rank(Cena.w.PLN <= 35000)*100) %>% 
+  arrange(frakcja)
+
+```
+
+# zadanie 16
+```{r}
+zad_16 <- auta2012 %>% filter(Marka != "",
+                              Rok.produkcji == "2007") %>% 
+  group_by(Marka) %>%
+  count(Marka)
+colnames(zad_16) <- c("Marka","Count") 
+desc(zad_16$Count)
+```
+
+# zadanie 17
+```{r}
+policzSredniaCene <- function(Marka = "Toyota",
+                              Rok.produkcji = "2007") {
+  if(Marka == "Toyota" || Rok.produkcji =="2007") {
+    auta <- auta2012 %>% filter(Marka == "Toyota",
+                                Rok.produkcji == "2007") %>% 
+      group_by(Marka) %>%
+      mutate(srednia = mean(Cena.w.PLN)) %>% 
+      count(srednia)
+  } 
+ return(auta$srednia)
+}
+
+policzSredniaCene("Toyota","2007")
+```
+
+# zadanie 18
+```{r}
+zadanie_18 <- auta2012 %>% filter(Rok.produkcji == "2006",
+                                  Rodzaj.paliwa == "olej napedowy (diesel)",
+                                  Marka != "") %>% 
+  group_by(Marka) %>%
+  mutate(srednia = mean(Cena.w.PLN)) %>% 
+  select(Marka, srednia) %>% 
+  count(srednia) %>% select(Marka, srednia)
+zadanie_18$Marka <- as.character(zadanie_18$Marka)
+
+max(zadanie_18$srednia)
+
+zadanie_18 <- zadanie_18 %>% filter(srednia >110000)
+## problem z funkcja count nie liczy XD
+  
+
+```
+
+# zadanie 19
+```{r}
+####
+# tabela dla wartoœci paliwa diesel
+# tabela kontyngencji 
+# hmm tu trzeba pliczyæ procenty z danym paliwem
+Zad_19 <- auta2012 %>% mutate(Paliwo = grepl(pattern = "benzyna", Rodzaj.paliwa)) %>% 
+  select(c(Marka,Model,Paliwo)) %>% 
+  group_by(Marka) %>%
+  filter(Marka != "") %>%
+  count(Paliwo)
+
+```
+
+# zadanie 20
+```{r}
+#####
+
+
+swieta <- function() {
+print("      @")
+print("     ##")
+print("    ####")
+print("   ######")
+print("  ########")
+print(" ##########")
+print("############")
+print("     {}")
+}
+
+swieta()
+```
+
+```{r}
+cho <- function(choi = X) {
+  for(j in 1:1) {
+    print(" &")
+  }
+  i==1
+for(i in 1:5) {
+  print("XXX", i)
+}
+   for(n in 1:1) {
+    print("[]")
+  }
+}
+```
+ 
+ 
