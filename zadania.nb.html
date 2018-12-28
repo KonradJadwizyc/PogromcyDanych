@@ -197,34 +197,31 @@ library(dplyr)</code></pre>
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="zadanie-1" class="section level1">
-<h1>zadanie 1</h1>
+<div id="zadanie-1-ok" class="section level1">
+<h1>zadanie 1 ok</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud3luaWsgPC0gc3FydCgoMis1MTcpKjEuMjMpXG5gYGAifQ== -->
-<pre class="r"><code>wynik &lt;- sqrt((2+517)*1.23)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuemFkXzEgPC0gc3FydCgoMis1MTcpKjEuMjMpXG5cbmBgYCJ9 -->
+<pre class="r"><code>zad_1 &lt;- sqrt((2+517)*1.23)
+</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="zadanie-2" class="section level1">
-<h1>zadanie 2</h1>
+<div id="zadanie-2-ok" class="section level1">
+<h1>zadanie 2 ok</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud3luaWsgPC0ga290eV9wdGFraSAlPiUgc2VsZWN0KHByZWRrb3NjKVxuXG56YWRfMiA8LSBpZmVsc2Uod3luaWtbLFwicHJlZGtvc2NcIl0gPiA5OSxcbiAgICAgICAgICAgICAgICAgXCJzenlia2lcIixcbiAgICAgICAgICAgICAgICAgXCJ3b2xueVwiKVxuZGF0YS5mcmFtZSh3eW5pazIpXG5jYmluZCh3eW5payx3eW5pazIpXG5gYGAifQ== -->
-<pre class="r"><code>wynik &lt;- koty_ptaki %&gt;% select(predkosc)
-
-zad_2 &lt;- ifelse(wynik[,&quot;predkosc&quot;] &gt; 99,
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuWmFkXzIgPC0ga290eV9wdGFraSAlPiUgbXV0YXRlKHd5bmlrID0gaWZlbHNlKGtvdHlfcHRha2kkcHJlZGtvc2MgPiA5OSxcbiAgICAgICAgICAgICAgICAgXCJzenlia2lcIixcbiAgICAgICAgICAgICAgICAgXCJ3b2xueVwiKSlcbmBgYCJ9 -->
+<pre class="r"><code>Zad_2 &lt;- koty_ptaki %&gt;% mutate(wynik = ifelse(koty_ptaki$predkosc &gt; 99,
                  &quot;szybki&quot;,
-                 &quot;wolny&quot;)
-data.frame(wynik2)
-cbind(wynik,wynik2)</code></pre>
+                 &quot;wolny&quot;))</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="zadanie-3" class="section level1">
-<h1>zadanie 3</h1>
+<div id="zadanie-3-ok" class="section level1">
+<h1>zadanie 3 ok</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuemFkXzMgPC0ga290eV9wdGFraSAlPiUgZmlsdGVyKGRsdWdvc2MgPiAxKVxuYGBgIn0= -->
@@ -233,8 +230,8 @@ cbind(wynik,wynik2)</code></pre>
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="zadanie-4" class="section level1">
-<h1>zadanie 4</h1>
+<div id="zadanie-4-ok" class="section level1">
+<h1>zadanie 4 ok</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuemFkXzQgPC0ga290eV9wdGFraSAlPiUgYXJyYW5nZShwcmVka29zYylcblxuYGBgIn0= -->
@@ -244,8 +241,8 @@ cbind(wynik,wynik2)</code></pre>
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="zadanie-5" class="section level1">
-<h1>zadanie 5</h1>
+<div id="zadanie-5-ok" class="section level1">
+<h1>zadanie 5 ok</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYXV0YSA8LSBhdXRhMjAxMlxuemFkXzUgPC0gYyhhcy5jaGFyYWN0ZXIoYXV0YSRNYXJrYSkpXG5gYGAifQ== -->
@@ -255,27 +252,23 @@ zad_5 &lt;- c(as.character(auta$Marka))</code></pre>
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="zadanie-6" class="section level1">
-<h1>zadanie 6</h1>
+<div id="zadanie-6-ok" class="section level1">
+<h1>zadanie 6 ok</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuemFkXzYuMSA8LSB6YWRfNiAlPiUgbXV0YXRlKHByb2NlbnQgPSBwZXJjZW50JFByb2NlbnQgKVxuXG5gYGAifQ== -->
-<pre class="r"><code>zad_6.1 &lt;- zad_6 %&gt;% mutate(procent = percent$Procent )
-</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuemFkXzYgPC0gYXV0YTIwMTIgJT4lIG11dGF0ZShrbGltYXR5emFjamEgPSBncmVwbChwYXR0ZXJuID0gXCJrbGltYXR5emFjamFcIiwgV3lwb3NhemVuaWUuZG9kYXRrb3dlKSkgJT4lIFxud3luaWsgPC0geHRhYnMofmtsaW1hdHl6YWNqYSwgZGF0YSA9IGF1dGEyMDEyKVxuYGBgIn0= -->
+<pre class="r"><code>zad_6 &lt;- auta2012 %&gt;% mutate(klimatyzacja = grepl(pattern = &quot;klimatyzacja&quot;, Wyposazenie.dodatkowe)) %&gt;% 
+wynik &lt;- xtabs(~klimatyzacja, data = auta2012)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gbXV0YXRlX2ltcGwoLmRhdGEsIGRvdHMpIDogXG4gIENvbHVtbiBgcHJvY2VudGAgbXVzdCBiZSBsZW5ndGggMiAodGhlIGdyb3VwIHNpemUpIG9yIG9uZSwgbm90IDE3NlxuIn0= -->
-<pre><code>Error in mutate_impl(.data, dots) : 
-  Column `procent` must be length 2 (the group size) or one, not 176</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="zadanie-7" class="section level1">
-<h1>zadanie 7</h1>
+<div id="zadanie-7-ok" class="section level1">
+<h1>zadanie 7 ok</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYXV0YTcgPC0gYXV0YTIwMTIgJT4lIGZpbHRlcihNYXJrYSA9PSBcIlZvbGtzd2FnZW5cIikgJT4lIFxuICBncm91cF9ieShNb2RlbCkgJT4lIG11dGF0ZSh3eW5pa0NlbmEgPSBtZWFuKENlbmEudy5QTE4pKSAlPiUgXG4gIG11dGF0ZSh3eW5pa1ByemViaWVnID0gbWVhbihQcnplYmllZy53LmttLCBuYS5ybSA9IFRSVUUpKVxuXG5gYGAifQ== -->
-<pre class="r"><code>auta7 &lt;- auta2012 %&gt;% filter(Marka == &quot;Volkswagen&quot;) %&gt;% 
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuWmFkXzcgPC0gYXV0YTIwMTIgJT4lIGZpbHRlcihNYXJrYSA9PSBcIlZvbGtzd2FnZW5cIikgJT4lIFxuICBncm91cF9ieShNb2RlbCkgJT4lIG11dGF0ZSh3eW5pa0NlbmEgPSBtZWFuKENlbmEudy5QTE4pKSAlPiUgXG4gIG11dGF0ZSh3eW5pa1ByemViaWVnID0gbWVhbihQcnplYmllZy53LmttLCBuYS5ybSA9IFRSVUUpKVxuXG5gYGAifQ== -->
+<pre class="r"><code>Zad_7 &lt;- auta2012 %&gt;% filter(Marka == &quot;Volkswagen&quot;) %&gt;% 
   group_by(Model) %&gt;% mutate(wynikCena = mean(Cena.w.PLN)) %&gt;% 
   mutate(wynikPrzebieg = mean(Przebieg.w.km, na.rm = TRUE))
 </code></pre>
@@ -283,32 +276,29 @@ zad_5 &lt;- c(as.character(auta$Marka))</code></pre>
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="zadnie-8" class="section level1">
-<h1>zadnie 8</h1>
+<div id="zadnie-8-ok" class="section level1">
+<h1>zadnie 8 ok</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5hdXRhOCA8LSBhdXRhMjAxMiAlPiUgc2VsZWN0KGMoTWFya2EsQ2VuYS53LlBMTikpICU+JSBcbiAgZmlsdGVyKE1hcmthICE9IFwiXCIpICU+JVxuICBncm91cF9ieShNYXJrYSkgJT4lIFxuICBtdXRhdGUoc3JlZG5pYSA9IG1lYW4oQ2VuYS53LlBMTikpICU+JSBcbiAgY291bnQoc3JlZG5pYSkgJT4lIHNlbGVjdChjKE1hcmthLHNyZWRuaWEpKVxuXG5gYGAifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5aYWRfOCA8LSBhdXRhMjAxMiAlPiUgc2VsZWN0KGMoTWFya2EsQ2VuYS53LlBMTikpICU+JSBcbiAgZmlsdGVyKE1hcmthICE9IFwiXCIpICU+JVxuICBncm91cF9ieShNYXJrYSkgJT4lIFxuICBzdW1tYXJpc2Uoc3JlZG5pYSA9IG1lYW4oQ2VuYS53LlBMTiwgbmEucm0gPSBUUlVFKSkgJT4lIGFycmFuZ2Uoc3JlZG5pYSlcblxuYGBgIn0= -->
 <pre class="r"><code>
-auta8 &lt;- auta2012 %&gt;% select(c(Marka,Cena.w.PLN)) %&gt;% 
+Zad_8 &lt;- auta2012 %&gt;% select(c(Marka,Cena.w.PLN)) %&gt;% 
   filter(Marka != &quot;&quot;) %&gt;%
   group_by(Marka) %&gt;% 
-  mutate(srednia = mean(Cena.w.PLN)) %&gt;% 
-  count(srednia) %&gt;% select(c(Marka,srednia))
+  summarise(srednia = mean(Cena.w.PLN, na.rm = TRUE)) %&gt;% arrange(srednia)
 </code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="zadanie-9" class="section level1">
-<h1>zadanie 9</h1>
+<div id="zadanie-9-ok" class="section level1">
+<h1>zadanie 9 ok</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShjYSlcbiMjIyMjIHRvIHRlxbwgbmllIGR6aWHFgsSFIFxuVGFiIDwtIGxldmVscyhhdXRhMjAxMiRSb2R6YWoucGFsaXdhKVthdXRhMjAxMiRSb2R6YWoucGFsaXdhXVxuYXV0YTkgPC0gYXV0YTIwMTIgJT4lIGZpbHRlcihNYXJrYSA9PSBcIlZvbGtzd2FnZW5cIikgJT4lXG4gIHRhYmxlKFRhYilcbmBgYCJ9 -->
-<pre class="r"><code>library(ca)
-##### to też nie działą 
-Tab &lt;- levels(auta2012$Rodzaj.paliwa)[auta2012$Rodzaj.paliwa]
-auta9 &lt;- auta2012 %&gt;% filter(Marka == &quot;Volkswagen&quot;) %&gt;%
-  table(Tab)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYXV0YTkgPC0gYXV0YTIwMTIgJT4lIGZpbHRlcihNYXJrYSA9PSBcIlZvbGtzd2FnZW5cIilcbnphZF85IDwtIHRhYmxlKGF1dGE5JFJvZHphai5wYWxpd2EpXG56YWRfOVxuYGBgIn0= -->
+<pre class="r"><code>auta9 &lt;- auta2012 %&gt;% filter(Marka == &quot;Volkswagen&quot;)
+zad_9 &lt;- table(auta9$Rodzaj.paliwa)
+zad_9</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -317,32 +307,38 @@ auta9 &lt;- auta2012 %&gt;% filter(Marka == &quot;Volkswagen&quot;) %&gt;%
 <h1>zadania 10</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyMjIyMjIHRvIHRyemViYSBkb2tvxYRjennEhyBcbnByb2NLbGltYSA8LSBmdW5jdGlvbihNYXJrYSA9IFwiXCIpIHtcbiAgaWYoTWFya2EgPT0gXCJcIikge1xuICB6YWRfNiA8LSBhdXRhMjAxMiAlPiUgbXV0YXRlKGtsaW1hdHl6YWNqYSA9IGdyZXBsKHBhdHRlcm4gPSBcImtsaW1hdHl6YWNqYVwiLCBXeXBvc2F6ZW5pZS5kb2RhdGtvd2UpKSAlPiUgXG4gIGdyb3VwX2J5KE1hcmthKSAlPiUgY291bnQoa2xpbWF0eXphY2phKSAlPiUgZmlsdGVyKE1hcmthICE9IFwiXCIpICU+JSBmaWx0ZXIoTWFya2EgPT0gXCJUb3lvdGFcIilcbiAgfSBlbHNlIHtcbiAgICB6YWRfNiA8LSBhdXRhMjAxMiAlPiUgbXV0YXRlKGtsaW1hdHl6YWNqYSA9IGdyZXBsKHBhdHRlcm4gPSBcImtsaW1hdHl6YWNqYVwiLCBXeXBvc2F6ZW5pZS5kb2RhdGtvd2UpKSAlPiUgXG4gIGdyb3VwX2J5KE1hcmthKSAlPiUgY291bnQoa2xpbWF0eXphY2phKSAlPiUgZmlsdGVyKE1hcmthICE9IFwiXCIpXG4gIH1cbiAgXG5wZXJjZW50IDwtIGRhdGEuZnJhbWUocGVyY2VudF9yYW5rKHphZF82JG4pKVxuICBcbnJldHVybih6YWRfNilcbn1cbnByb2NLbGltYShNYXJrYSA9IFwiVG95b3RhXCIpXG5gYGAifQ== -->
-<pre class="r"><code>###### to trzeba dokończyć 
-procKlima &lt;- function(Marka = &quot;&quot;) {
-  if(Marka == &quot;&quot;) {
-  zad_6 &lt;- auta2012 %&gt;% mutate(klimatyzacja = grepl(pattern = &quot;klimatyzacja&quot;, Wyposazenie.dodatkowe)) %&gt;% 
-  group_by(Marka) %&gt;% count(klimatyzacja) %&gt;% filter(Marka != &quot;&quot;) %&gt;% filter(Marka == &quot;Toyota&quot;)
-  } else {
-    zad_6 &lt;- auta2012 %&gt;% mutate(klimatyzacja = grepl(pattern = &quot;klimatyzacja&quot;, Wyposazenie.dodatkowe)) %&gt;% 
-  group_by(Marka) %&gt;% count(klimatyzacja) %&gt;% filter(Marka != &quot;&quot;)
-  }
-  
-percent &lt;- data.frame(percent_rank(zad_6$n))
-  
-return(zad_6)
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBwcnp5a2xhZCBkbGEgbWFya2kgVG95b3RhXG5wcm9jS2xpbWEgPC0gZnVuY3Rpb24oTWFya2EgPSBcInRveW90YVwiKSB7XG4gIGlmKE1hcmthID09IFwiVG95b3RhXCIpIHtcbiAgemFkXzEwIDwtIGF1dGEyMDEyICU+JSBcbiAgICBtdXRhdGUoa2xpbWF0eXphY2phID0gZ3JlcGwocGF0dGVybiA9IFwia2xpbWF0eXphY2phXCIsIFd5cG9zYXplbmllLmRvZGF0a293ZSkpICU+JSBcbiAgICBmaWx0ZXIoTWFya2EgIT0gXCJcIikgJT4lIFxuICAgIGZpbHRlcihNYXJrYSA9PSBcIlRveW90YVwiKSAlPiVcbiAgICBzZWxlY3QoTWFya2Esa2xpbWF0eXphY2phKSAlPiUgXG4gICAgY291bnQoTWFya2Esa2xpbWF0eXphY2phKVxuXG4gIH0gXG4gIHJldHVybih6YWRfMTApXG5cbn1cblxucHJvY0tsaW1hKE1hcmthID0gXCJUb3lvdGFcIilcblxuIyBicmFrIGF1dG9tYXR5Y3puZWZvIHd5YmllcmFuaWEgTWFya2lcbiMgYnJhayBsaWN6ZW5pYSBwcm9jZW50b3dcblxuIyB0cnplYmEgemFwcm9ncmFtb3dhYyBhdXRvbWF0eWN6bmUgd3liaWVyYW5pZSB3YXJ0b3NjaSB6IGtvbHVtbnkgTWFya2EgaSBwb2xpY3p5xIcgcHJvY2VudFxuYGBgIn0= -->
+<pre class="r"><code># przyklad dla marki Toyota
+procKlima &lt;- function(Marka = &quot;toyota&quot;) {
+  if(Marka == &quot;Toyota&quot;) {
+  zad_10 &lt;- auta2012 %&gt;% 
+    mutate(klimatyzacja = grepl(pattern = &quot;klimatyzacja&quot;, Wyposazenie.dodatkowe)) %&gt;% 
+    filter(Marka != &quot;&quot;) %&gt;% 
+    filter(Marka == &quot;Toyota&quot;) %&gt;%
+    select(Marka,klimatyzacja) %&gt;% 
+    count(Marka,klimatyzacja)
+
+  } 
+  return(zad_10)
+
 }
-procKlima(Marka = &quot;Toyota&quot;)</code></pre>
+
+procKlima(Marka = &quot;Toyota&quot;)
+
+# brak automatycznefo wybierania Marki
+# brak liczenia procentow
+
+# trzeba zaprogramowac automatyczne wybieranie wartosci z kolumny Marka i policzyć procent</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="zad-11" class="section level1">
-<h1>zad 11</h1>
+<div id="zad-11-ok" class="section level1">
+<h1>zad 11 ok</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYXV0YTExIDwtIGF1dGEyMDEyICU+JSBmaWx0ZXIoTWFya2EgPT0gXCJUb3lvdGFcIiwgTW9kZWwgPT0gXCJDb3JvbGxhXCIpXG5cbiBkYXRhIDwtIHF1YW50aWxlKGF1dGExMSRDZW5hLncuUExOLCBuYS5ybSA9IFRSVUUsIG5hbWVzID0gVFJVRSlcbiBkYXRhWzI6NF1cblxuYGBgIn0= -->
-<pre class="r"><code>auta11 &lt;- auta2012 %&gt;% filter(Marka == &quot;Toyota&quot;, Model == &quot;Corolla&quot;)
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuWmFkXzExIDwtIGF1dGEyMDEyICU+JSBmaWx0ZXIoTWFya2EgPT0gXCJUb3lvdGFcIiwgTW9kZWwgPT0gXCJDb3JvbGxhXCIpXG5cbiBkYXRhIDwtIHF1YW50aWxlKGF1dGExMSRDZW5hLncuUExOLCBuYS5ybSA9IFRSVUUsIG5hbWVzID0gVFJVRSlcbiBkYXRhWzI6NF1cblxuYGBgIn0= -->
+<pre class="r"><code>Zad_11 &lt;- auta2012 %&gt;% filter(Marka == &quot;Toyota&quot;, Model == &quot;Corolla&quot;)
 
  data &lt;- quantile(auta11$Cena.w.PLN, na.rm = TRUE, names = TRUE)
  data[2:4]
@@ -351,22 +347,21 @@ procKlima(Marka = &quot;Toyota&quot;)</code></pre>
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="zadanie-12" class="section level1">
-<h1>zadanie 12</h1>
+<div id="zadanie-12-ok" class="section level1">
+<h1>zadanie 12 ok</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYXV0YTEyIDwtIGF1dGEyMDEyICU+JSBmaWx0ZXIoTWFya2EgPT0gXCJUb3lvdGFcIikgJT4lIFxuICBncm91cF9ieShNb2RlbCkgJT4lIFxuICBtdXRhdGUoc3JlZG5pYSA9IG1lYW4oQ2VuYS53LlBMTiwgbmEucm0gPSBUUlVFKSkgJT4lIFxuICBjb3VudChzcmVkbmlhKSAlPiUgc2VsZWN0KGMoTW9kZWwsc3JlZG5pYSkpXG5hdXRhMTJcbmBgYCJ9 -->
-<pre class="r"><code>auta12 &lt;- auta2012 %&gt;% filter(Marka == &quot;Toyota&quot;) %&gt;% 
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuWmFkXzEyIDwtIGF1dGEyMDEyICU+JSBmaWx0ZXIoTWFya2EgPT0gXCJUb3lvdGFcIikgJT4lIFxuICBncm91cF9ieShNb2RlbCkgJT4lIFxuICBzdW1tYXJpc2Uoc3JlZG5pYSA9IG1lYW4oQ2VuYS53LlBMTiwgbmEucm0gPSBUUlVFKSkgJT4lIGFycmFuZ2UoLXNyZWRuaWEpXG5aYWRfMTJcbmBgYCJ9 -->
+<pre class="r"><code>Zad_12 &lt;- auta2012 %&gt;% filter(Marka == &quot;Toyota&quot;) %&gt;% 
   group_by(Model) %&gt;% 
-  mutate(srednia = mean(Cena.w.PLN, na.rm = TRUE)) %&gt;% 
-  count(srednia) %&gt;% select(c(Model,srednia))
-auta12</code></pre>
+  summarise(srednia = mean(Cena.w.PLN, na.rm = TRUE)) %&gt;% arrange(-srednia)
+Zad_12</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="zadanie-13" class="section level1">
-<h1>zadanie 13</h1>
+<div id="zadanie-13-ok" class="section level1">
+<h1>zadanie 13 ok</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGFuZVdpZWsgPC0gcmVhZC5jc3YoZmlsZSA9IFwiaHR0cDovL2JpZWNlay5wbC9SL2RhbmUvZGFuZU8uY3N2XCIsIHNlcCA9IFwiO1wiLCBkZWMgPSBcIixcIiwgaGVhZGVyID0gVFJVRSlcbndpZWsgPC0gZGFuZVdpZWsgJT4lICBtdXRhdGUoc3JXaWVrID0gbWVhbihXaWVrKSlcbmBgYCJ9 -->
@@ -376,21 +371,19 @@ wiek &lt;- daneWiek %&gt;%  mutate(srWiek = mean(Wiek))</code></pre>
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="zadanie-14" class="section level1">
-<h1>zadanie 14</h1>
+<div id="zadanie-14-ok" class="section level1">
+<h1>zadanie 14 ok</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuemFkXzE0IDwtIGtvdHlfcHRha2kgJT4lIGdyb3VwX2J5KGRydXp5bmEpICU+JSBcbiAgbXV0YXRlKG1heFByZWRrb3NjID0gbWF4KHByZWRrb3NjKSkgJT4lIFxuICBjb3VudChtYXhQcmVka29zYykgJT4lIFxuICBzZWxlY3QoYyhkcnV6eW5hLG1heFByZWRrb3NjKSlcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuemFkXzE0IDwtIGtvdHlfcHRha2kgJT4lIGdyb3VwX2J5KGRydXp5bmEpICU+JSBcbiBzdW1tYXJpc2Uoc3JlZG5pYSA9bWF4KHByZWRrb3NjLCBuYS5ybSA9IFRSVUUpKSBcbmBgYCJ9 -->
 <pre class="r"><code>zad_14 &lt;- koty_ptaki %&gt;% group_by(druzyna) %&gt;% 
-  mutate(maxPredkosc = max(predkosc)) %&gt;% 
-  count(maxPredkosc) %&gt;% 
-  select(c(druzyna,maxPredkosc))</code></pre>
+ summarise(srednia =max(predkosc, na.rm = TRUE)) </code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="zadanie-15" class="section level1">
-<h1>zadanie 15</h1>
+<div id="zadanie-15-ok" class="section level1">
+<h1>zadanie 15 ok</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYXV0YTE0IDwtIGF1dGEyMDEyICU+JSBmaWx0ZXIoTWFya2EgPT0gXCJWb2xrc3dhZ2VuXCIsIE1vZGVsID09IFwiUGFzc2F0XCIsIFJvay5wcm9kdWtjamkgPT0gXCIyMDA2XCIpICU+JSBcbiAgbXV0YXRlKHNyQ2VuYSA9IG1lYW4oQ2VuYS53LlBMTiwgbmEucm0gPSBUUlVFKSkgJT4lIFxuICBtdXRhdGUoZnJha2NqYSA9IHBlcmNlbnRfcmFuayhDZW5hLncuUExOIDw9IDM1MDAwKSoxMDApICU+JSBcbiAgYXJyYW5nZShmcmFrY2phKVxuXG5gYGAifQ== -->
@@ -403,34 +396,31 @@ wiek &lt;- daneWiek %&gt;%  mutate(srWiek = mean(Wiek))</code></pre>
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="zadanie-16" class="section level1">
-<h1>zadanie 16</h1>
+<div id="zadanie-16-ok" class="section level1">
+<h1>zadanie 16 ok</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuemFkXzE2IDwtIGF1dGEyMDEyICU+JSBmaWx0ZXIoTWFya2EgIT0gXCJcIixcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFJvay5wcm9kdWtjamkgPT0gXCIyMDA3XCIpICU+JSBcbiAgZ3JvdXBfYnkoTWFya2EpICU+JVxuICBjb3VudChNYXJrYSlcbmNvbG5hbWVzKHphZF8xNikgPC0gYyhcIk1hcmthXCIsXCJDb3VudFwiKSBcbmRlc2MoemFkXzE2JENvdW50KVxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuemFkXzE2IDwtIGF1dGEyMDEyICU+JSBmaWx0ZXIoTWFya2EgIT0gXCJcIixcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFJvay5wcm9kdWtjamkgPT0gXCIyMDA3XCIpICU+JSBcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvdW50KE1hcmthLCBzb3J0ID0gVFJVRSkgJT4lXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICByZW5hbWUoY291bnQgPSBuKSBcbmBgYCJ9 -->
 <pre class="r"><code>zad_16 &lt;- auta2012 %&gt;% filter(Marka != &quot;&quot;,
                               Rok.produkcji == &quot;2007&quot;) %&gt;% 
-  group_by(Marka) %&gt;%
-  count(Marka)
-colnames(zad_16) &lt;- c(&quot;Marka&quot;,&quot;Count&quot;) 
-desc(zad_16$Count)</code></pre>
+                              count(Marka, sort = TRUE) %&gt;%
+                              rename(count = n) </code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="zadanie-17" class="section level1">
-<h1>zadanie 17</h1>
+<div id="zadanie-17-ok" class="section level1">
+<h1>zadanie 17 ok</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucG9saWN6U3JlZG5pYUNlbmUgPC0gZnVuY3Rpb24oTWFya2EgPSBcIlRveW90YVwiLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgUm9rLnByb2R1a2NqaSA9IFwiMjAwN1wiKSB7XG4gIGlmKE1hcmthID09IFwiVG95b3RhXCIgfHwgUm9rLnByb2R1a2NqaSA9PVwiMjAwN1wiKSB7XG4gICAgYXV0YSA8LSBhdXRhMjAxMiAlPiUgZmlsdGVyKE1hcmthID09IFwiVG95b3RhXCIsXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFJvay5wcm9kdWtjamkgPT0gXCIyMDA3XCIpICU+JSBcbiAgICAgIGdyb3VwX2J5KE1hcmthKSAlPiVcbiAgICAgIG11dGF0ZShzcmVkbmlhID0gbWVhbihDZW5hLncuUExOKSkgJT4lIFxuICAgICAgY291bnQoc3JlZG5pYSlcbiAgfSBcbiByZXR1cm4oYXV0YSRzcmVkbmlhKVxufVxuXG5wb2xpY3pTcmVkbmlhQ2VuZShcIlRveW90YVwiLFwiMjAwN1wiKVxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucG9saWN6U3JlZG5pYUNlbmUgPC0gZnVuY3Rpb24oTWFya2EgPSBcIlRveW90YVwiLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgUm9rLnByb2R1a2NqaSA9IFwiMjAwN1wiKSB7XG4gIGlmKE1hcmthID09IFwiVG95b3RhXCIgfHwgUm9rLnByb2R1a2NqaSA9PVwiMjAwN1wiKSB7XG4gICAgYXV0YSA8LSBhdXRhMjAxMiAlPiUgZmlsdGVyKE1hcmthID09IFwiVG95b3RhXCIsXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFJvay5wcm9kdWtjamkgPT0gXCIyMDA3XCIpICU+JSBcbiAgICAgIGdyb3VwX2J5KE1hcmthKSAlPiVcbiAgICAgc3VtbWFyaXNlKHNyZWRuaWEgPSBtZWFuKENlbmEudy5QTE4sIG5hLnJtID0gVFJVRSkpXG4gIH0gXG4gcmV0dXJuKGF1dGEkc3JlZG5pYSlcbn1cblxucG9saWN6U3JlZG5pYUNlbmUoXCJUb3lvdGFcIixcIjIwMDdcIilcbmBgYCJ9 -->
 <pre class="r"><code>policzSredniaCene &lt;- function(Marka = &quot;Toyota&quot;,
                               Rok.produkcji = &quot;2007&quot;) {
   if(Marka == &quot;Toyota&quot; || Rok.produkcji ==&quot;2007&quot;) {
     auta &lt;- auta2012 %&gt;% filter(Marka == &quot;Toyota&quot;,
                                 Rok.produkcji == &quot;2007&quot;) %&gt;% 
       group_by(Marka) %&gt;%
-      mutate(srednia = mean(Cena.w.PLN)) %&gt;% 
-      count(srednia)
+     summarise(srednia = mean(Cena.w.PLN, na.rm = TRUE))
   } 
  return(auta$srednia)
 }
@@ -440,72 +430,53 @@ policzSredniaCene(&quot;Toyota&quot;,&quot;2007&quot;)</code></pre>
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="zadanie-18" class="section level1">
-<h1>zadanie 18</h1>
+<div id="zadanie-18-prawie-ok" class="section level1">
+<h1>zadanie 18 prawie ok</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWF4KHphZGFuaWVfMTgkc3JlZG5pYSlcblxuYGBgIn0= -->
-<pre class="r"><code>max(zadanie_18$srednia)
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuemFkXzE4IDwtIGF1dGEyMDEyICU+JSBmaWx0ZXIoUm9rLnByb2R1a2NqaSA9PSBcIjIwMDZcIixcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBSb2R6YWoucGFsaXdhID09IFwib2xlaiBuYXBlZG93eSAoZGllc2VsKVwiLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIE1hcmthICE9IFwiXCIpICU+JSBcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBncm91cF9ieShNYXJrYSkgJT4lXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgc3VtbWFyaXNlKHNyZWRuaWEgPSBtZWFuKENlbmEudy5QTE4sIG5hLnJtID0gVFJVRSkpICU+JVxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHN1bW1hcmlzZShuYWpzenlic3p5ID0gbWF4KHNyZWRuaWEpKVxuIyBwcm9ibGVtIHogZG9kYW5pZW0gbWFya2kgICAgIFxuXG5gYGAifQ== -->
+<pre class="r"><code>zad_18 &lt;- auta2012 %&gt;% filter(Rok.produkcji == &quot;2006&quot;,
+                                  Rodzaj.paliwa == &quot;olej napedowy (diesel)&quot;,
+                                  Marka != &quot;&quot;) %&gt;% 
+                                  group_by(Marka) %&gt;%
+                                  summarise(srednia = mean(Cena.w.PLN, na.rm = TRUE)) %&gt;%
+                                  summarise(najszybszy = max(srednia))
+# problem z dodaniem marki     
 </code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDExODAwMFxuIn0= -->
-<pre><code>[1] 118000</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="zadanie-19" class="section level1">
-<h1>zadanie 19</h1>
+<div id="zadanie-19-prawie-ok" class="section level1">
+<h1>zadanie 19 prawie ok</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-</div>
-<div id="zadanie-20" class="section level1">
-<h1>zadanie 20</h1>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyMjIyNcblxuXG5zd2lldGEgPC0gZnVuY3Rpb24oKSB7XG5wcmludChcIiAgICAgIEBcIilcbnByaW50KFwiICAgICAjI1wiKVxucHJpbnQoXCIgICAgIyMjI1wiKVxucHJpbnQoXCIgICAjIyMjIyNcIilcbnByaW50KFwiICAjIyMjIyMjI1wiKVxucHJpbnQoXCIgIyMjIyMjIyMjI1wiKVxucHJpbnQoXCIjIyMjIyMjIyMjIyNcIilcbnByaW50KFwiICAgICB7fVwiKVxufVxuXG5zd2lldGEoKVxuYGBgIn0= -->
-<pre class="r"><code>#####
-
-
-swieta &lt;- function() {
-print(&quot;      @&quot;)
-print(&quot;     ##&quot;)
-print(&quot;    ####&quot;)
-print(&quot;   ######&quot;)
-print(&quot;  ########&quot;)
-print(&quot; ##########&quot;)
-print(&quot;############&quot;)
-print(&quot;     {}&quot;)
-}
-
-swieta()</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuemFkXzE5IDwtIGRpYWdub3phICU+JSBmaWx0ZXIoZWR1azRfMjAxMyAhPSBcIlwiKSAlPiUgc2VsZWN0KHBsZWMsIGVkdWs0XzIwMTMpXG50YWJsZSh6YWRfMTkpXG4jIEJyYWsgdXN1bmllY2lhIHdhcnRvc2NpIDBcbmBgYCJ9 -->
+<pre class="r"><code>zad_19 &lt;- diagnoza %&gt;% filter(eduk4_2013 != &quot;&quot;) %&gt;% select(plec, eduk4_2013)
+table(zad_19)
+# Brak usuniecia wartosci 0</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+</div>
+<div id="zadanie-20-ok" class="section level1">
+<h1>zadanie 20 ok</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2hvIDwtIGZ1bmN0aW9uKGNob2kgPSBYKSB7XG4gIGZvcihqIGluIDE6MSkge1xuICAgIHByaW50KFwiICZcIilcbiAgfVxuICBpPT0xXG5mb3IoaSBpbiAxOjUpIHtcbiAgcHJpbnQoXCJYWFhcIiwgaSlcbn1cbiAgIGZvcihuIGluIDE6MSkge1xuICAgIHByaW50KFwiW11cIilcbiAgfVxufVxuYGBgIn0= -->
-<pre class="r"><code>cho &lt;- function(choi = X) {
-  for(j in 1:1) {
-    print(&quot; &amp;&quot;)
-  }
-  i==1
-for(i in 1:5) {
-  print(&quot;XXX&quot;, i)
-}
-   for(n in 1:1) {
-    print(&quot;[]&quot;)
-  }
-}</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG56YWRfMjAgPC0gdGlkeXI6OmdhdGhlcihkaWFnbm96YSwga2V5LCB3eWtzenRhbGNlbmllLCBlZHVrNF8yMDEzKSAlPiVcbiAgc2VsZWN0KGMocGxlYyx3eWtzenRhbGNlbmllKSkgJT4lXG4gIGZpbHRlcih3eWtzenRhbGNlbmllICE9XCJcIikgJT4lXG4gIGdyb3VwX2J5KHBsZWMpICU+JVxuICBjb3VudCh3eWtzenRhbGNlbmllKVxuYGBgIn0= -->
+<pre class="r"><code>
+zad_20 &lt;- tidyr::gather(diagnoza, key, wyksztalcenie, eduk4_2013) %&gt;%
+  select(c(plec,wyksztalcenie)) %&gt;%
+  filter(wyksztalcenie !=&quot;&quot;) %&gt;%
+  group_by(plec) %&gt;%
+  count(wyksztalcenie)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlBvZ3JvbWN5IGRhbnljaCINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KLS0tDQojIGluc3RhbGFjamEgcGFraWV0dSBwb2dyb21jeSBkYW55Y2gNCmBgYHtyfQ0KaW5zdGFsbC5wYWNrYWdlcygiUG9ncm9tY3lEYW55Y2giKQ0KYGBgDQoNCiMgYmlibGlvdGVraSANCmBgYHtyfQ0KbGlicmFyeShQb2dyb21jeURhbnljaCkNCmxpYnJhcnkoZHBseXIpDQpgYGANCg0KDQojIHphZGFuaWUgMQ0KYGBge3J9DQp6YWRfMSA8LSBzcXJ0KCgyKzUxNykqMS4yMykNCg0KYGBgDQoNCiMgemFkYW5pZSAyDQpgYGB7cn0NCnd5bmlrIDwtIGtvdHlfcHRha2kgJT4lIHNlbGVjdChwcmVka29zYykNCg0KemFkXzIgPC0gaWZlbHNlKHd5bmlrWywicHJlZGtvc2MiXSA+IDk5LA0KICAgICAgICAgICAgICAgICAic3p5YmtpIiwNCiAgICAgICAgICAgICAgICAgIndvbG55IikNCmRhdGEuZnJhbWUod3luaWsyKQ0KY2JpbmQod3luaWssd3luaWsyKQ0KYGBgDQoNCiMgemFkYW5pZSAzDQpgYGB7cn0NCnphZF8zIDwtIGtvdHlfcHRha2kgJT4lIGZpbHRlcihkbHVnb3NjID4gMSkNCmBgYA0KDQojIHphZGFuaWUgNA0KYGBge3J9DQp6YWRfNCA8LSBrb3R5X3B0YWtpICU+JSBhcnJhbmdlKHByZWRrb3NjKQ0KDQpgYGANCg0KIyB6YWRhbmllIDUgDQpgYGB7cn0NCmF1dGEgPC0gYXV0YTIwMTINCnphZF81IDwtIGMoYXMuY2hhcmFjdGVyKGF1dGEkTWFya2EpKQ0KYGBgDQoNCiMgemFkYW5pZSA2IA0KYGBge3J9DQojIyMjIw0KDQp6YWRfNiA8LSBhdXRhMjAxMiAlPiUgbXV0YXRlKGtsaW1hdHl6YWNqYSA9IGdyZXBsKHBhdHRlcm4gPSAia2xpbWF0eXphY2phIiwgV3lwb3NhemVuaWUuZG9kYXRrb3dlKSkgJT4lIA0KICBncm91cF9ieShNYXJrYSkgJT4lIGNvdW50KGtsaW1hdHl6YWNqYSkgJT4lIGZpbHRlcihNYXJrYSAhPSAiIikNCg0KcGVyY2VudCA8LSBkYXRhLmZyYW1lKHBlcmNlbnRfcmFuayh6YWRfNiRuKSkNCg0KY29sbmFtZXMocGVyY2VudCkgPC0gKCJQcm9jZW50IikNCg0KYGBgDQoNCiMgemFkYW5pZSA3DQpgYGB7cn0NCmF1dGE3IDwtIGF1dGEyMDEyICU+JSBmaWx0ZXIoTWFya2EgPT0gIlZvbGtzd2FnZW4iKSAlPiUgDQogIGdyb3VwX2J5KE1vZGVsKSAlPiUgbXV0YXRlKHd5bmlrQ2VuYSA9IG1lYW4oQ2VuYS53LlBMTikpICU+JSANCiAgbXV0YXRlKHd5bmlrUHJ6ZWJpZWcgPSBtZWFuKFByemViaWVnLncua20sIG5hLnJtID0gVFJVRSkpDQoNCmBgYA0KDQojIHphZG5pZSA4DQpgYGB7cn0NCg0KYXV0YTggPC0gYXV0YTIwMTIgJT4lIHNlbGVjdChjKE1hcmthLENlbmEudy5QTE4pKSAlPiUgDQogIGZpbHRlcihNYXJrYSAhPSAiIikgJT4lDQogIGdyb3VwX2J5KE1hcmthKSAlPiUgDQogIG11dGF0ZShzcmVkbmlhID0gbWVhbihDZW5hLncuUExOKSkgJT4lIA0KICBjb3VudChzcmVkbmlhKSAlPiUgc2VsZWN0KGMoTWFya2Esc3JlZG5pYSkpDQoNCmBgYA0KDQojIHphZGFuaWUgOQ0KYGBge3J9DQpsaWJyYXJ5KGNhKQ0KIyMjIyMgdG8gdGW/IG5pZSBkemlhs7kgDQpUYWIgPC0gbGV2ZWxzKGF1dGEyMDEyJFJvZHphai5wYWxpd2EpW2F1dGEyMDEyJFJvZHphai5wYWxpd2FdDQphdXRhOSA8LSBhdXRhMjAxMiAlPiUgZmlsdGVyKE1hcmthID09ICJWb2xrc3dhZ2VuIikgJT4lDQogIHRhYmxlKFRhYikNCmBgYA0KDQojIHphZGFuaWEgMTANCmBgYHtyfQ0KIyMjIyMjIHRvIHRyemViYSBkb2tv8WN6eeYgDQpwcm9jS2xpbWEgPC0gZnVuY3Rpb24oTWFya2EgPSAiIikgew0KICBpZihNYXJrYSA9PSAiIikgew0KICB6YWRfNiA8LSBhdXRhMjAxMiAlPiUgbXV0YXRlKGtsaW1hdHl6YWNqYSA9IGdyZXBsKHBhdHRlcm4gPSAia2xpbWF0eXphY2phIiwgV3lwb3NhemVuaWUuZG9kYXRrb3dlKSkgJT4lIA0KICBncm91cF9ieShNYXJrYSkgJT4lIGNvdW50KGtsaW1hdHl6YWNqYSkgJT4lIGZpbHRlcihNYXJrYSAhPSAiIikgJT4lIGZpbHRlcihNYXJrYSA9PSAiVG95b3RhIikNCiAgfSBlbHNlIHsNCiAgICB6YWRfNiA8LSBhdXRhMjAxMiAlPiUgbXV0YXRlKGtsaW1hdHl6YWNqYSA9IGdyZXBsKHBhdHRlcm4gPSAia2xpbWF0eXphY2phIiwgV3lwb3NhemVuaWUuZG9kYXRrb3dlKSkgJT4lIA0KICBncm91cF9ieShNYXJrYSkgJT4lIGNvdW50KGtsaW1hdHl6YWNqYSkgJT4lIGZpbHRlcihNYXJrYSAhPSAiIikNCiAgfQ0KICANCnBlcmNlbnQgPC0gZGF0YS5mcmFtZShwZXJjZW50X3JhbmsoemFkXzYkbikpDQogIA0KcmV0dXJuKHphZF82KQ0KfQ0KcHJvY0tsaW1hKE1hcmthID0gIlRveW90YSIpDQpgYGANCg0KIyB6YWQgMTEgDQpgYGB7cn0NCmF1dGExMSA8LSBhdXRhMjAxMiAlPiUgZmlsdGVyKE1hcmthID09ICJUb3lvdGEiLCBNb2RlbCA9PSAiQ29yb2xsYSIpDQoNCiBkYXRhIDwtIHF1YW50aWxlKGF1dGExMSRDZW5hLncuUExOLCBuYS5ybSA9IFRSVUUsIG5hbWVzID0gVFJVRSkNCiBkYXRhWzI6NF0NCg0KYGBgDQoNCiN6YWRhbmllIDEyDQpgYGB7cn0NCmF1dGExMiA8LSBhdXRhMjAxMiAlPiUgZmlsdGVyKE1hcmthID09ICJUb3lvdGEiKSAlPiUgDQogIGdyb3VwX2J5KE1vZGVsKSAlPiUgDQogIG11dGF0ZShzcmVkbmlhID0gbWVhbihDZW5hLncuUExOLCBuYS5ybSA9IFRSVUUpKSAlPiUgDQogIGNvdW50KHNyZWRuaWEpICU+JSBzZWxlY3QoYyhNb2RlbCxzcmVkbmlhKSkNCmF1dGExMg0KYGBgDQoNCiMgemFkYW5pZSAxMyANCmBgYHtyfQ0KZGFuZVdpZWsgPC0gcmVhZC5jc3YoZmlsZSA9ICJodHRwOi8vYmllY2VrLnBsL1IvZGFuZS9kYW5lTy5jc3YiLCBzZXAgPSAiOyIsIGRlYyA9ICIsIiwgaGVhZGVyID0gVFJVRSkNCndpZWsgPC0gZGFuZVdpZWsgJT4lICBtdXRhdGUoc3JXaWVrID0gbWVhbihXaWVrKSkNCmBgYA0KDQojIHphZGFuaWUgMTQNCmBgYHtyfQ0KemFkXzE0IDwtIGtvdHlfcHRha2kgJT4lIGdyb3VwX2J5KGRydXp5bmEpICU+JSANCiAgbXV0YXRlKG1heFByZWRrb3NjID0gbWF4KHByZWRrb3NjKSkgJT4lIA0KICBjb3VudChtYXhQcmVka29zYykgJT4lIA0KICBzZWxlY3QoYyhkcnV6eW5hLG1heFByZWRrb3NjKSkNCmBgYA0KDQojIHphZGFuaWUgMTUNCmBgYHtyfQ0KYXV0YTE0IDwtIGF1dGEyMDEyICU+JSBmaWx0ZXIoTWFya2EgPT0gIlZvbGtzd2FnZW4iLCBNb2RlbCA9PSAiUGFzc2F0IiwgUm9rLnByb2R1a2NqaSA9PSAiMjAwNiIpICU+JSANCiAgbXV0YXRlKHNyQ2VuYSA9IG1lYW4oQ2VuYS53LlBMTiwgbmEucm0gPSBUUlVFKSkgJT4lIA0KICBtdXRhdGUoZnJha2NqYSA9IHBlcmNlbnRfcmFuayhDZW5hLncuUExOIDw9IDM1MDAwKSoxMDApICU+JSANCiAgYXJyYW5nZShmcmFrY2phKQ0KDQpgYGANCg0KIyB6YWRhbmllIDE2DQpgYGB7cn0NCnphZF8xNiA8LSBhdXRhMjAxMiAlPiUgZmlsdGVyKE1hcmthICE9ICIiLA0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgUm9rLnByb2R1a2NqaSA9PSAiMjAwNyIpICU+JSANCiAgZ3JvdXBfYnkoTWFya2EpICU+JQ0KICBjb3VudChNYXJrYSkNCmNvbG5hbWVzKHphZF8xNikgPC0gYygiTWFya2EiLCJDb3VudCIpIA0KZGVzYyh6YWRfMTYkQ291bnQpDQpgYGANCg0KIyB6YWRhbmllIDE3DQpgYGB7cn0NCnBvbGljelNyZWRuaWFDZW5lIDwtIGZ1bmN0aW9uKE1hcmthID0gIlRveW90YSIsDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICBSb2sucHJvZHVrY2ppID0gIjIwMDciKSB7DQogIGlmKE1hcmthID09ICJUb3lvdGEiIHx8IFJvay5wcm9kdWtjamkgPT0iMjAwNyIpIHsNCiAgICBhdXRhIDwtIGF1dGEyMDEyICU+JSBmaWx0ZXIoTWFya2EgPT0gIlRveW90YSIsDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFJvay5wcm9kdWtjamkgPT0gIjIwMDciKSAlPiUgDQogICAgICBncm91cF9ieShNYXJrYSkgJT4lDQogICAgICBtdXRhdGUoc3JlZG5pYSA9IG1lYW4oQ2VuYS53LlBMTikpICU+JSANCiAgICAgIGNvdW50KHNyZWRuaWEpDQogIH0gDQogcmV0dXJuKGF1dGEkc3JlZG5pYSkNCn0NCg0KcG9saWN6U3JlZG5pYUNlbmUoIlRveW90YSIsIjIwMDciKQ0KYGBgDQoNCiMgemFkYW5pZSAxOA0KYGBge3J9DQp6YWRhbmllXzE4IDwtIGF1dGEyMDEyICU+JSBmaWx0ZXIoUm9rLnByb2R1a2NqaSA9PSAiMjAwNiIsDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgUm9kemFqLnBhbGl3YSA9PSAib2xlaiBuYXBlZG93eSAoZGllc2VsKSIsDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgTWFya2EgIT0gIiIpICU+JSANCiAgZ3JvdXBfYnkoTWFya2EpICU+JQ0KICBtdXRhdGUoc3JlZG5pYSA9IG1lYW4oQ2VuYS53LlBMTikpICU+JSANCiAgc2VsZWN0KE1hcmthLCBzcmVkbmlhKSAlPiUgDQogIGNvdW50KHNyZWRuaWEpICU+JSBzZWxlY3QoTWFya2EsIHNyZWRuaWEpDQp6YWRhbmllXzE4JE1hcmthIDwtIGFzLmNoYXJhY3Rlcih6YWRhbmllXzE4JE1hcmthKQ0KDQptYXgoemFkYW5pZV8xOCRzcmVkbmlhKQ0KDQp6YWRhbmllXzE4IDwtIHphZGFuaWVfMTggJT4lIGZpbHRlcihzcmVkbmlhID4xMTAwMDApDQojIyBwcm9ibGVtIHogZnVua2NqYSBjb3VudCBuaWUgbGljenkgWEQNCiAgDQoNCmBgYA0KDQojIHphZGFuaWUgMTkNCmBgYHtyfQ0KIyMjIw0KIyB0YWJlbGEgZGxhIHdhcnRvnGNpIHBhbGl3YSBkaWVzZWwNCiMgdGFiZWxhIGtvbnR5bmdlbmNqaSANCiMgaG1tIHR1IHRyemViYSBwbGljennmIHByb2NlbnR5IHogZGFueW0gcGFsaXdlbQ0KWmFkXzE5IDwtIGF1dGEyMDEyICU+JSBtdXRhdGUoUGFsaXdvID0gZ3JlcGwocGF0dGVybiA9ICJiZW56eW5hIiwgUm9kemFqLnBhbGl3YSkpICU+JSANCiAgc2VsZWN0KGMoTWFya2EsTW9kZWwsUGFsaXdvKSkgJT4lIA0KICBncm91cF9ieShNYXJrYSkgJT4lDQogIGZpbHRlcihNYXJrYSAhPSAiIikgJT4lDQogIGNvdW50KFBhbGl3bykNCg0KYGBgDQoNCiMgemFkYW5pZSAyMA0KYGBge3J9DQojIyMjIw0KDQoNCnN3aWV0YSA8LSBmdW5jdGlvbigpIHsNCnByaW50KCIgICAgICBAIikNCnByaW50KCIgICAgICMjIikNCnByaW50KCIgICAgIyMjIyIpDQpwcmludCgiICAgIyMjIyMjIikNCnByaW50KCIgICMjIyMjIyMjIikNCnByaW50KCIgIyMjIyMjIyMjIyIpDQpwcmludCgiIyMjIyMjIyMjIyMjIikNCnByaW50KCIgICAgIHt9IikNCn0NCg0Kc3dpZXRhKCkNCmBgYA0KDQpgYGB7cn0NCmNobyA8LSBmdW5jdGlvbihjaG9pID0gWCkgew0KICBmb3IoaiBpbiAxOjEpIHsNCiAgICBwcmludCgiICYiKQ0KICB9DQogIGk9PTENCmZvcihpIGluIDE6NSkgew0KICBwcmludCgiWFhYIiwgaSkNCn0NCiAgIGZvcihuIGluIDE6MSkgew0KICAgIHByaW50KCJbXSIpDQogIH0NCn0NCmBgYA0KIA0KIA==</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlBvZ3JvbWN5IGRhbnljaCINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KLS0tDQojIGluc3RhbGFjamEgcGFraWV0dSBwb2dyb21jeSBkYW55Y2gNCmBgYHtyfQ0KaW5zdGFsbC5wYWNrYWdlcygiUG9ncm9tY3lEYW55Y2giKQ0KYGBgDQoNCiMgYmlibGlvdGVraSANCmBgYHtyfQ0KbGlicmFyeShQb2dyb21jeURhbnljaCkNCmxpYnJhcnkoZHBseXIpDQpgYGANCg0KDQojIHphZGFuaWUgMSBvaw0KYGBge3J9DQp6YWRfMSA8LSBzcXJ0KCgyKzUxNykqMS4yMykNCg0KYGBgDQoNCiMgemFkYW5pZSAyIG9rDQpgYGB7cn0NClphZF8yIDwtIGtvdHlfcHRha2kgJT4lIG11dGF0ZSh3eW5payA9IGlmZWxzZShrb3R5X3B0YWtpJHByZWRrb3NjID4gOTksDQogICAgICAgICAgICAgICAgICJzenlia2kiLA0KICAgICAgICAgICAgICAgICAid29sbnkiKSkNCmBgYA0KDQojIHphZGFuaWUgMyBvaw0KYGBge3J9DQp6YWRfMyA8LSBrb3R5X3B0YWtpICU+JSBmaWx0ZXIoZGx1Z29zYyA+IDEpDQpgYGANCg0KIyB6YWRhbmllIDQgb2sNCmBgYHtyfQ0KemFkXzQgPC0ga290eV9wdGFraSAlPiUgYXJyYW5nZShwcmVka29zYykNCg0KYGBgDQoNCiMgemFkYW5pZSA1IG9rDQpgYGB7cn0NCmF1dGEgPC0gYXV0YTIwMTINCnphZF81IDwtIGMoYXMuY2hhcmFjdGVyKGF1dGEkTWFya2EpKQ0KYGBgDQoNCiMgemFkYW5pZSA2IG9rDQpgYGB7cn0NCnphZF82IDwtIGF1dGEyMDEyICU+JSBtdXRhdGUoa2xpbWF0eXphY2phID0gZ3JlcGwocGF0dGVybiA9ICJrbGltYXR5emFjamEiLCBXeXBvc2F6ZW5pZS5kb2RhdGtvd2UpKSAlPiUgDQp3eW5payA8LSB4dGFicyh+a2xpbWF0eXphY2phLCBkYXRhID0gYXV0YTIwMTIpDQpgYGANCg0KIyB6YWRhbmllIDcgb2sNCmBgYHtyfQ0KWmFkXzcgPC0gYXV0YTIwMTIgJT4lIGZpbHRlcihNYXJrYSA9PSAiVm9sa3N3YWdlbiIpICU+JSANCiAgZ3JvdXBfYnkoTW9kZWwpICU+JSBtdXRhdGUod3luaWtDZW5hID0gbWVhbihDZW5hLncuUExOKSkgJT4lIA0KICBtdXRhdGUod3luaWtQcnplYmllZyA9IG1lYW4oUHJ6ZWJpZWcudy5rbSwgbmEucm0gPSBUUlVFKSkNCg0KYGBgDQoNCiMgemFkbmllIDggb2sNCmBgYHtyfQ0KDQpaYWRfOCA8LSBhdXRhMjAxMiAlPiUgc2VsZWN0KGMoTWFya2EsQ2VuYS53LlBMTikpICU+JSANCiAgZmlsdGVyKE1hcmthICE9ICIiKSAlPiUNCiAgZ3JvdXBfYnkoTWFya2EpICU+JSANCiAgc3VtbWFyaXNlKHNyZWRuaWEgPSBtZWFuKENlbmEudy5QTE4sIG5hLnJtID0gVFJVRSkpICU+JSBhcnJhbmdlKHNyZWRuaWEpDQoNCmBgYA0KDQojIHphZGFuaWUgOSBvaw0KYGBge3J9DQphdXRhOSA8LSBhdXRhMjAxMiAlPiUgZmlsdGVyKE1hcmthID09ICJWb2xrc3dhZ2VuIikNCnphZF85IDwtIHRhYmxlKGF1dGE5JFJvZHphai5wYWxpd2EpDQp6YWRfOQ0KYGBgDQoNCiMgemFkYW5pYSAxMCANCmBgYHtyfQ0KIyBwcnp5a2xhZCBkbGEgbWFya2kgVG95b3RhDQpwcm9jS2xpbWEgPC0gZnVuY3Rpb24oTWFya2EgPSAidG95b3RhIikgew0KICBpZihNYXJrYSA9PSAiVG95b3RhIikgew0KICB6YWRfMTAgPC0gYXV0YTIwMTIgJT4lIA0KICAgIG11dGF0ZShrbGltYXR5emFjamEgPSBncmVwbChwYXR0ZXJuID0gImtsaW1hdHl6YWNqYSIsIFd5cG9zYXplbmllLmRvZGF0a293ZSkpICU+JSANCiAgICBmaWx0ZXIoTWFya2EgIT0gIiIpICU+JSANCiAgICBmaWx0ZXIoTWFya2EgPT0gIlRveW90YSIpICU+JQ0KICAgIHNlbGVjdChNYXJrYSxrbGltYXR5emFjamEpICU+JSANCiAgICBjb3VudChNYXJrYSxrbGltYXR5emFjamEpDQoNCiAgfSANCiAgcmV0dXJuKHphZF8xMCkNCg0KfQ0KDQpwcm9jS2xpbWEoTWFya2EgPSAiVG95b3RhIikNCg0KIyBicmFrIGF1dG9tYXR5Y3puZWZvIHd5YmllcmFuaWEgTWFya2kNCiMgYnJhayBsaWN6ZW5pYSBwcm9jZW50b3cNCg0KIyB0cnplYmEgemFwcm9ncmFtb3dhYyBhdXRvbWF0eWN6bmUgd3liaWVyYW5pZSB3YXJ0b3NjaSB6IGtvbHVtbnkgTWFya2EgaSBwb2xpY3p5xIcgcHJvY2VudA0KYGBgDQoNCiMgemFkIDExIG9rDQpgYGB7cn0NClphZF8xMSA8LSBhdXRhMjAxMiAlPiUgZmlsdGVyKE1hcmthID09ICJUb3lvdGEiLCBNb2RlbCA9PSAiQ29yb2xsYSIpDQoNCiBkYXRhIDwtIHF1YW50aWxlKGF1dGExMSRDZW5hLncuUExOLCBuYS5ybSA9IFRSVUUsIG5hbWVzID0gVFJVRSkNCiBkYXRhWzI6NF0NCg0KYGBgDQoNCiN6YWRhbmllIDEyIG9rDQpgYGB7cn0NClphZF8xMiA8LSBhdXRhMjAxMiAlPiUgZmlsdGVyKE1hcmthID09ICJUb3lvdGEiKSAlPiUgDQogIGdyb3VwX2J5KE1vZGVsKSAlPiUgDQogIHN1bW1hcmlzZShzcmVkbmlhID0gbWVhbihDZW5hLncuUExOLCBuYS5ybSA9IFRSVUUpKSAlPiUgYXJyYW5nZSgtc3JlZG5pYSkNClphZF8xMg0KYGBgDQoNCiMgemFkYW5pZSAxMyBvaw0KYGBge3J9DQpkYW5lV2llayA8LSByZWFkLmNzdihmaWxlID0gImh0dHA6Ly9iaWVjZWsucGwvUi9kYW5lL2RhbmVPLmNzdiIsIHNlcCA9ICI7IiwgZGVjID0gIiwiLCBoZWFkZXIgPSBUUlVFKQ0Kd2llayA8LSBkYW5lV2llayAlPiUgIG11dGF0ZShzcldpZWsgPSBtZWFuKFdpZWspKQ0KYGBgDQoNCiMgemFkYW5pZSAxNCBvaw0KYGBge3J9DQp6YWRfMTQgPC0ga290eV9wdGFraSAlPiUgZ3JvdXBfYnkoZHJ1enluYSkgJT4lIA0KIHN1bW1hcmlzZShzcmVkbmlhID1tYXgocHJlZGtvc2MsIG5hLnJtID0gVFJVRSkpIA0KYGBgDQoNCiMgemFkYW5pZSAxNSBvaw0KYGBge3J9DQphdXRhMTQgPC0gYXV0YTIwMTIgJT4lIGZpbHRlcihNYXJrYSA9PSAiVm9sa3N3YWdlbiIsIE1vZGVsID09ICJQYXNzYXQiLCBSb2sucHJvZHVrY2ppID09ICIyMDA2IikgJT4lIA0KICBtdXRhdGUoc3JDZW5hID0gbWVhbihDZW5hLncuUExOLCBuYS5ybSA9IFRSVUUpKSAlPiUgDQogIG11dGF0ZShmcmFrY2phID0gcGVyY2VudF9yYW5rKENlbmEudy5QTE4gPD0gMzUwMDApKjEwMCkgJT4lIA0KICBhcnJhbmdlKGZyYWtjamEpDQoNCmBgYA0KDQojIHphZGFuaWUgMTYgb2sNCmBgYHtyfQ0KemFkXzE2IDwtIGF1dGEyMDEyICU+JSBmaWx0ZXIoTWFya2EgIT0gIiIsDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICBSb2sucHJvZHVrY2ppID09ICIyMDA3IikgJT4lIA0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY291bnQoTWFya2EsIHNvcnQgPSBUUlVFKSAlPiUNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJlbmFtZShjb3VudCA9IG4pIA0KYGBgDQoNCiMgemFkYW5pZSAxNyBvaw0KYGBge3J9DQpwb2xpY3pTcmVkbmlhQ2VuZSA8LSBmdW5jdGlvbihNYXJrYSA9ICJUb3lvdGEiLA0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgUm9rLnByb2R1a2NqaSA9ICIyMDA3Iikgew0KICBpZihNYXJrYSA9PSAiVG95b3RhIiB8fCBSb2sucHJvZHVrY2ppID09IjIwMDciKSB7DQogICAgYXV0YSA8LSBhdXRhMjAxMiAlPiUgZmlsdGVyKE1hcmthID09ICJUb3lvdGEiLA0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBSb2sucHJvZHVrY2ppID09ICIyMDA3IikgJT4lIA0KICAgICAgZ3JvdXBfYnkoTWFya2EpICU+JQ0KICAgICBzdW1tYXJpc2Uoc3JlZG5pYSA9IG1lYW4oQ2VuYS53LlBMTiwgbmEucm0gPSBUUlVFKSkNCiAgfSANCiByZXR1cm4oYXV0YSRzcmVkbmlhKQ0KfQ0KDQpwb2xpY3pTcmVkbmlhQ2VuZSgiVG95b3RhIiwiMjAwNyIpDQpgYGANCg0KIyB6YWRhbmllIDE4IHByYXdpZSBvaw0KYGBge3J9DQp6YWRfMTggPC0gYXV0YTIwMTIgJT4lIGZpbHRlcihSb2sucHJvZHVrY2ppID09ICIyMDA2IiwNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBSb2R6YWoucGFsaXdhID09ICJvbGVqIG5hcGVkb3d5IChkaWVzZWwpIiwNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBNYXJrYSAhPSAiIikgJT4lIA0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGdyb3VwX2J5KE1hcmthKSAlPiUNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBzdW1tYXJpc2Uoc3JlZG5pYSA9IG1lYW4oQ2VuYS53LlBMTiwgbmEucm0gPSBUUlVFKSkgJT4lDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgc3VtbWFyaXNlKG5hanN6eWJzenkgPSBtYXgoc3JlZG5pYSkpDQojIHByb2JsZW0geiBkb2RhbmllbSBtYXJraSAgICAgDQoNCmBgYA0KDQojIHphZGFuaWUgMTkgcHJhd2llIG9rDQpgYGB7cn0NCnphZF8xOSA8LSBkaWFnbm96YSAlPiUgZmlsdGVyKGVkdWs0XzIwMTMgIT0gIiIpICU+JSBzZWxlY3QocGxlYywgZWR1azRfMjAxMykNCnRhYmxlKHphZF8xOSkNCiMgQnJhayB1c3VuaWVjaWEgd2FydG9zY2kgMA0KYGBgDQoNCiMgemFkYW5pZSAyMCBvaw0KYGBge3J9DQoNCnphZF8yMCA8LSB0aWR5cjo6Z2F0aGVyKGRpYWdub3phLCBrZXksIHd5a3N6dGFsY2VuaWUsIGVkdWs0XzIwMTMpICU+JQ0KICBzZWxlY3QoYyhwbGVjLHd5a3N6dGFsY2VuaWUpKSAlPiUNCiAgZmlsdGVyKHd5a3N6dGFsY2VuaWUgIT0iIikgJT4lDQogIGdyb3VwX2J5KHBsZWMpICU+JQ0KICBjb3VudCh3eWtzenRhbGNlbmllKQ0KYGBgDQoNCiA=</div>
 
 
 

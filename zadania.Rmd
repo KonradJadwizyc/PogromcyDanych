@@ -75,20 +75,29 @@ zad_9 <- table(auta9$Rodzaj.paliwa)
 zad_9
 ```
 
-# zadania 10
+# zadania 10 
 ```{r}
-# dla przekładu dla marki Toyota
-procKlima <- function(Marka = "") {
-  if(Marka == "") {
-  zad_10 <- auta2012 %>% mutate(klimatyzacja = grepl(pattern = "klimatyzacja", Wyposazenie.dodatkowe)) %>% 
-  filter(Marka != "") %>% filter(Marka == "Toyota")
+# przyklad dla marki Toyota
+procKlima <- function(Marka = "toyota") {
+  if(Marka == "Toyota") {
+  zad_10 <- auta2012 %>% 
+    mutate(klimatyzacja = grepl(pattern = "klimatyzacja", Wyposazenie.dodatkowe)) %>% 
+    filter(Marka != "") %>% 
+    filter(Marka == "Toyota") %>%
+    select(Marka,klimatyzacja) %>% 
+    count(Marka,klimatyzacja)
+
   } 
-  
-percent <- data.frame(percent_rank(zad_10$klimatyzacja))
-  
-return(zad_10)
+  return(zad_10)
+
 }
+
 procKlima(Marka = "Toyota")
+
+# brak automatycznefo wybierania Marki
+# brak liczenia procentow
+
+# trzeba zaprogramowac automatyczne wybieranie wartosci z kolumny Marka i policzyć procent
 ```
 
 # zad 11 ok
@@ -153,28 +162,33 @@ policzSredniaCene <- function(Marka = "Toyota",
 policzSredniaCene("Toyota","2007")
 ```
 
-# zadanie 18 ok - dodanie max prędkości
+# zadanie 18 prawie ok
 ```{r}
 zad_18 <- auta2012 %>% filter(Rok.produkcji == "2006",
                                   Rodzaj.paliwa == "olej napedowy (diesel)",
                                   Marka != "") %>% 
                                   group_by(Marka) %>%
-                                  summarise(srednia = mean(Cena.w.PLN, na.rm = TRUE))
-                                  
+                                  summarise(srednia = mean(Cena.w.PLN, na.rm = TRUE)) %>%
+                                  summarise(najszybszy = max(srednia))
+# problem z dodaniem marki     
 
 ```
 
-# zadanie 19
+# zadanie 19 prawie ok
+```{r}
+zad_19 <- diagnoza %>% filter(eduk4_2013 != "") %>% select(plec, eduk4_2013)
+table(zad_19)
+# Brak usuniecia wartosci 0
+```
+
+# zadanie 20 ok
 ```{r}
 
-
+zad_20 <- tidyr::gather(diagnoza, key, wyksztalcenie, eduk4_2013) %>%
+  select(c(plec,wyksztalcenie)) %>%
+  filter(wyksztalcenie !="") %>%
+  group_by(plec) %>%
+  count(wyksztalcenie)
 ```
 
-# zadanie 20
-```{r}
-#####
-
-```
-
- 
  
