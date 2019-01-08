@@ -80,21 +80,15 @@ zad_9
 
 
 # przyklad dla marki Toyota
-procKlima <- function(auto = Marka) {
-  if(auto == Marka) {
-  zad_10 <- auta2012 %>% 
+procKlima <- function(marka) {
+    auta2012 %>% filter(Marka == marka) %>%
     mutate(klimatyzacja = grepl(pattern = "klimatyzacja", Wyposazenie.dodatkowe)) %>% 
     filter(Marka != "") %>% 
-    filter(Marka == "Marka") %>%
     select(Marka,klimatyzacja) %>% 
     count(Marka,klimatyzacja)
 
-  } 
 }
-procKlima(auto = "Toyota")
-# brak automatycznefo wybierania Marki
-# brak liczenia procentow
-# trzeba zaprogramowac automatyczne wybieranie wartosci z kolumny Marka i policzyć procent
+procKlima("Toyota")
 ```
 
 # zad 11 ok
